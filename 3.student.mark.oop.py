@@ -4,7 +4,7 @@ Overview:
     - File name: 3.student.mark.oop.py
     - Fix all bug (I tried)
     - Good user interface design
-    - Comment and documentation are available 
+    - Comment and documentation are available
 
 Author:
     - Le Anh Tu
@@ -185,8 +185,8 @@ class Main:
         print("\n---------------------End of this choice---------------------\n")
 
     def menu_1(self):
-        print("[1] Set information for student. ")
-        print("[2] Set information for course. ")
+        print("[1] Set information for all student in class. ")
+        print("[2] Set information for all course in class. ")
         print("[0] Exit.\n")
 
     def menu_course(self):
@@ -428,7 +428,7 @@ class Main:
         # menu option for menu 2
         # force user input 3 if not => unable to full menu options
 
-        while choice_menu_2 != 0:
+        while True:
             """ Seeing comment for this block at function_full method"""
 
             if choice_menu_2 == 1:
@@ -482,7 +482,7 @@ class Main:
 
         if choice_menu1 == 1:
             # Student add is selected, setting .....
-            am_of_st = Cs.input_integer_not_exception(" - Enter amount of student you want to add: ")
+            am_of_st = Cs.input_integer_not_exception(" - Enter amount of in the class you want to add: ")
             for i in range(0, am_of_st):
                 self.function_1()
             self.end_of_choice()
@@ -520,7 +520,7 @@ class Main:
 
             if choice_menu_1_2 == 1:
                 am_of_st = Cs.input_integer_not_exception(
-                    " - Enter amount of student you want to add: ")
+                    " - Enter amount of student in the class you want to add: ")
                 for i in range(0, am_of_st):
                     self.function_1()
                 self.end_of_choice()
