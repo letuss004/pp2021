@@ -214,7 +214,6 @@ class Main:
         print("[6] Get information for student mark management. ")
         print("[7] Get information for course mark management. ")
         print("[8] Sort student list by GPA descending.")
-        print("[9] Sort student list by GPA increasing.")
         print("[0] Quit.\n")
 
     def function_full(self, message_choice):
