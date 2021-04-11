@@ -1,4 +1,5 @@
 class Student:
+    
     def __init__(self, name, s_id, dob):
         self._stdName = name
         self._stdID = s_id

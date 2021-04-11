@@ -1,5 +1,5 @@
 """
-:author: Le Anh Tu
+:Author: Le Anh Tu
 :ID: Ba9-067 
 :Lab work: 1
 """
