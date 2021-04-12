@@ -3,8 +3,8 @@ Overview:
     - Student Mark Management (practice work 4)
     - File name: 3.student.mark.oop.py
     - Fix all bug (I tried)
-    - Good user interface design 
-    - Comment and documentation are available 
+    - Good user interface design
+    - Comment and documentation are available
 
 Author:
     - Le Anh Tu
@@ -297,7 +297,7 @@ class Main:
                 check = True
                 print("---The course's id: " + i.get_c_id() + ", mark : "
                       + str(i.get_mark()) + ", student's id : " + i.get_s_id())
-        if check:
+        if not check:
             print("---This course did not contains any information.")
 
     def function_6(self):
@@ -546,4 +546,3 @@ class Main:
 if __name__ == '__main__':
     main = Main()
     main.start_engine()
-
