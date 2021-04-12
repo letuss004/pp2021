@@ -1,5 +1,4 @@
 class Student:
-    
     def __init__(self, name, s_id, dob):
         self._stdName = name
         self._stdID = s_id
@@ -67,7 +66,7 @@ class SMM:
 
 
 # ------------------------------ database -------------------------------------
-st_list = [Student("#", "#", "#")]
+st_list = [Student("#", "#", "")]
 course_list = [Course("#", "#")]
 smm_list = [SMM()]
 
@@ -76,6 +75,8 @@ course_list.clear()
 smm_list.clear()
 
 count_smm = 0
+
+
 # ------------------------------ method -------------------------------------
 
 
@@ -86,8 +87,7 @@ def input_domain(value, min_value, max_value):
 
 
 def quit_menu():
-    global choice
-    print("---------------------End of this choice---------------------")
+    print("\n---------------------End of this choice---------------------")
     choice = int(input("Make other choice, 0 to quit: "))
     choice = input_domain(choice, 0, 6)
     if choice == 0:
