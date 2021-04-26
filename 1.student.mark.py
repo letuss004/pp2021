@@ -2,6 +2,7 @@
 :author: Le Anh Tu
 :ID: Ba9-067
 :Lab work: 1
+Quite not perfect.
 """
 # --------lists-----------
 studentName = []
