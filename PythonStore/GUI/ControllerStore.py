@@ -18,6 +18,66 @@ import PythonStore.Console.ControllerStore as Cs
 import datetime
 
 
+def check_input_is_float_type(inputs):
+    try:
+        float(inputs)
+        return True
+    except ValueError:
+        return False
+
+
+def check_input_is_int_type(inputs):
+    try:
+        int(inputs)
+        return True
+    except ValueError:
+        return False
+
+
+def input_float_controller(value, min_value, max_value, label_annotation, color="red"):
+    """
+
+    :param value:
+    :param min_value:
+    :param max_value:
+    :param label_annotation:
+    :param color:
+    :return:
+    """
+    # Constraint input_value must be float, if not => label_annotation raise error
+    if check_input_is_float_type(value):
+        # Constraint value variable must in range (min < val < max)
+        if float(value) < min_value or float(value) > max_value:
+            label_annotation.config(
+                text=f"The values for min and max are {min_value} and {max_value}", foreground=color)
+        else:
+            return True
+    else:
+        label_annotation.config(text="The value is not a number", foreground=color)
+
+
+def input_int_controller(value, min_value, max_value, label_annotation, color="red"):
+    """
+
+    :param value:
+    :param min_value:
+    :param max_value:
+    :param label_annotation:
+    :param color:
+    :return:
+    """
+    # Constraint input_value must be float, if not => label_annotation raise error
+    if check_input_is_int_type(value):
+        # Constraint value variable must in range (min < val < max)
+        if value < min_value or value > max_value:
+            label_annotation.config(
+                text=f"The values for min and max are {min_value} and {max_value}", foreground=color)
+        else:
+            return True
+    else:
+        label_annotation.config(text="The value is not a number", foreground=color)
+
+
 def input_a_s_controller(inputs, label_annotation, attr_name, color="red"):
     """
 
@@ -55,10 +115,10 @@ def input_a_s_controller(inputs, label_annotation, attr_name, color="red"):
         list_unaccepted.append(" ")
 
     if len(list_unaccepted) != 0:
-        label_annotation.config(text=attr_name + " can not contains: " + str(list_unaccepted), fg=color)
+        label_annotation.config(text=attr_name + " can not contains: " + str(list_unaccepted), foreground=color)
         return False
     else:
-        label_annotation.config(text="", fg=color)
+        label_annotation.config(text="", foreground=color)
         return True
 
 
@@ -76,11 +136,12 @@ def input_identifier(inputs, label_annotation, color="red"):
         - if method return false => label_annotation = label_annotation.config
     """
     if not inputs.isidentifier():
-        label_annotation.config(text=str(inputs) + " is not an identifier", fg=color)
+        label_annotation.config(text=str(inputs) + " is not an identifier", foreground=color)
         return False
     else:
-        label_annotation.config(text="", fg=color)
+        label_annotation.config(text="", foreground=color)
         return True
+
 
 def input_dob(inputs, label_annotation, color="red"):
     """
@@ -99,9 +160,9 @@ def input_dob(inputs, label_annotation, color="red"):
     try:
         date_of_birth = datetime.datetime.strptime(dob, "%d/%m/%Y")
         str(date_of_birth)
-        label_annotation.config(text="", fg=color)
+        label_annotation.config(text="", foreground=color)
         return True
     except ValueError:
         label_annotation.config(text="Time input " + dob
-                                     + " does not match format '%d/%m/%Y'", fg=color)
+                                     + " does not match format '%d/%m/%Y'", foreground=color)
         return False
