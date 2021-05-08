@@ -39,7 +39,7 @@ class Function4(Frame):
         controller.sort_st_list_by_gpa_up()
         self.destroy_inf()
         self.show_inf()
-        self.button_gpa.config(text="Student DoB  ↓",
+        self.button_gpa.config(text="Student GPA  ↓",
                                command=lambda: [controller.sort_st_list_by_gpa_down(), self.command_bt_gpa_down()])
         pass
 
@@ -47,7 +47,7 @@ class Function4(Frame):
         controller.sort_st_list_by_gpa_down()
         self.destroy_inf()
         self.show_inf()
-        self.button_gpa.config(text="Student DoB  ↑",
+        self.button_gpa.config(text="Student GPA  ↑",
                                command=lambda: [controller.sort_st_list_by_gpa_up(), self.command_bt_gpa_up()])
         pass
 

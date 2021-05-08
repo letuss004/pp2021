@@ -108,5 +108,3 @@ class Function3(Frame):
         # set entry label ano
         self.label_sid_ano.config(text="Input Mark For Course On The Right")
         #
-
-

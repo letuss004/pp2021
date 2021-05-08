@@ -2,6 +2,7 @@
 Version:
     - 2.1.5
 What's new:
+    - Fix sort GPA button text mistake
     - Using pickle for upgrade the persistence feature in background thread
     - Sorting student dob is quite bad (fix in next version)
 Feature:
