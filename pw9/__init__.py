@@ -2,7 +2,7 @@
 Version:
     - 3.0.0
 What's new:
-    - Using mysql database
+    - Using mysql database to manage
     - Sorting student dob is quite bad (fix in next version)
 Feature:
     - Sorting list by name, id, gpa,....
