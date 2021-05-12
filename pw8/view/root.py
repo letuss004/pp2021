@@ -13,7 +13,7 @@ class Root(ThemedTk):
         self.extract()
         # setting main windows and attribute
         self.geometry("450x450")
-        self.title("Student Mark Management Version 2.1.5")
+        self.title("Student Mark Management Version 2.1.6")
         self.MenuFrame = MenuFrame
         self.set_theme("arc")
         # create container

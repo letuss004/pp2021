@@ -1,6 +1,6 @@
 """
 Version:
-    - 2.1.5
+    - 2.1.6
 What's new:
     - Fix sort GPA button text mistake
     - Using pickle for upgrade the persistence feature in background thread
