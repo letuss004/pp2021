@@ -156,69 +156,81 @@ def set_st_gpa(sid):
 def sort_st_list_by_name_up():
     condition = f"SELECT * FROM student ORDER BY name ASC"
     cursor.execute(condition)
+    return cursor.fetchall()
 
 
 def sort_st_list_by_name_down():
     condition = f"SELECT * FROM student ORDER BY name DESC"
     cursor.execute(condition)
+    return cursor.fetchall()
     pass
 
 
 def sort_st_list_by_id_up():
     condition = f"SELECT * FROM student ORDER BY id ASC"
     cursor.execute(condition)
+    return cursor.fetchall()
     pass
 
 
 def sort_st_list_by_id_down():
     condition = f"SELECT * FROM student ORDER BY id DESC"
     cursor.execute(condition)
+    return cursor.fetchall()
     pass
 
 
 def sort_st_list_by_dob_up():
     condition = f"SELECT * FROM student ORDER BY dob ASC"
     cursor.execute(condition)
+    return cursor.fetchall()
     pass
 
 
 def sort_st_list_by_dob_down():
     condition = f"SELECT * FROM student ORDER BY dob DESC"
     cursor.execute(condition)
+    return cursor.fetchall()
     pass
 
 
 def sort_st_list_by_gpa_up():
     condition = f"SELECT * FROM student ORDER BY gpa ASC"
     cursor.execute(condition)
+    return cursor.fetchall()
     pass
 
 
 def sort_st_list_by_gpa_down():
     condition = f"SELECT * FROM student ORDER BY gpa DESC"
     cursor.execute(condition)
+    return cursor.fetchall()
     pass
 
 
 def sort_cour_list_by_id_up():
-    condition = f"SELECT * FROM course ORDER BY id ACS"
+    condition = f"SELECT * FROM course ORDER BY id ASC"
     cursor.execute(condition)
+    return cursor.fetchall()
     pass
 
 
 def sort_cour_list_by_id_down():
     condition = f"SELECT * FROM course ORDER BY id DESC"
     cursor.execute(condition)
+    return cursor.fetchall()
     pass
 
 
 def sort_cour_list_by_name_up():
-    condition = f"SELECT * FROM course ORDER BY name ACS"
+    condition = f"SELECT * FROM course ORDER BY name ASC"
     cursor.execute(condition)
+    return cursor.fetchall()
     pass
 
 
 def sort_cour_list_by_name_down():
     condition = f"SELECT * FROM course ORDER BY name DESC"
     cursor.execute(condition)
+    return cursor.fetchall()
     pass

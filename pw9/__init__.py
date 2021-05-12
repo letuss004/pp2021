@@ -1,10 +1,11 @@
 """
 Version:
-    - 3.0.0
+    - 3.0.1
 What's new:
-    - Using mysql database to manage
+    - Fix sort button command exception
     - Sorting student dob is quite bad (fix in next version)
 Feature:
+    - Using mysql database
     - Sorting list by name, id, gpa,....
     - Add README.md
     - Extract pw4 into MVC model. Split class, file into correct packages
@@ -14,7 +15,6 @@ Feature:
     - Delete file after compress
     - No Error (I tried)
     - Extract file for get information
-
     - Override mark if sid and cid is overlap
     - Documentation and comments are available
     - Adding student, course, mark information with constraint input domain method

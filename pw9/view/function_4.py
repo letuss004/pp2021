@@ -37,64 +37,64 @@ class Function4(Frame):
         self.button_gpa.grid(row=1, column=3, padx=5, pady=5)
 
     def command_bt_gpa_up(self):
-        db_sql.sort_st_list_by_gpa_up()
+        sort_value = db_sql.sort_st_list_by_gpa_up()
         self.destroy_inf()
-        self.show_inf()
+        self.show_inf(sort=True, sort_value=sort_value)
         self.button_gpa.config(text="Student GPA  ↓",
                                command=lambda: [db_sql.sort_st_list_by_gpa_down(), self.command_bt_gpa_down()])
         pass
 
     def command_bt_gpa_down(self):
-        db_sql.sort_st_list_by_gpa_down()
+        sort_value = db_sql.sort_st_list_by_gpa_down()
         self.destroy_inf()
-        self.show_inf()
+        self.show_inf(sort=True, sort_value=sort_value)
         self.button_gpa.config(text="Student GPA  ↑",
                                command=lambda: [db_sql.sort_st_list_by_gpa_up(), self.command_bt_gpa_up()])
         pass
 
     def command_bt_dob_up(self):
-        db_sql.sort_st_list_by_dob_up()
+        sort_value = db_sql.sort_st_list_by_dob_up()
         self.destroy_inf()
-        self.show_inf()
+        self.show_inf(sort=True, sort_value=sort_value)
         self.button_dob.config(text="Student DoB  ↓",
                                command=lambda: [db_sql.sort_st_list_by_dob_down(), self.command_bt_dob_down()])
         pass
 
     def command_bt_dob_down(self):
-        db_sql.sort_st_list_by_dob_down()
+        sort_value = db_sql.sort_st_list_by_dob_down()
         self.destroy_inf()
-        self.show_inf()
+        self.show_inf(sort=True, sort_value=sort_value)
         self.button_dob.config(text="Student DoB  ↑",
                                command=lambda: [db_sql.sort_st_list_by_dob_up(), self.command_bt_dob_up()])
         pass
 
     def command_bt_name_up(self):
-        db_sql.sort_st_list_by_name_up()
+        sort_value = db_sql.sort_st_list_by_name_up()
         self.destroy_inf()
-        self.show_inf()
+        self.show_inf(sort=True, sort_value=sort_value)
         self.button_name.config(text="Student Name  ↓",
                                 command=lambda: [db_sql.sort_st_list_by_name_down(), self.command_bt_name_down()])
         pass
 
     def command_bt_name_down(self):
-        db_sql.sort_st_list_by_name_down()
+        sort_value = db_sql.sort_st_list_by_name_down()
         self.destroy_inf()
-        self.show_inf()
+        self.show_inf(sort=True, sort_value=sort_value)
         self.button_name.config(text="Student Name  ↑",
                                 command=lambda: [db_sql.sort_st_list_by_name_up(), self.command_bt_name_up()])
         pass
 
     def command_bt_id_up(self):
-        db_sql.sort_st_list_by_id_up()
+        sort_value = db_sql.sort_st_list_by_id_up()
         self.destroy_inf()
-        self.show_inf()
+        self.show_inf(sort=True, sort_value=sort_value)
         self.button_id.config(text="Student ID  ↓",
                               command=lambda: [db_sql.sort_st_list_by_id_down(), self.command_bt_id_down()])
 
     def command_bt_id_down(self):
-        db_sql.sort_st_list_by_id_down()
+        sort_value = db_sql.sort_st_list_by_id_down()
         self.destroy_inf()
-        self.show_inf()
+        self.show_inf(sort=True, sort_value=sort_value)
         self.button_id.config(text="Student ID  ↑",
                               command=lambda: [db_sql.sort_st_list_by_id_up(), self.command_bt_id_up()])
 
@@ -144,7 +144,12 @@ class Function4(Frame):
     #         element += 1
     #         row += 1
 
-    def show_inf(self):
+    def show_inf(self, sort=False, sort_value=None):
+        # can not declared parameter directly in constructor
+        # so pycharm hint this below
+        if sort_value is None:
+            sort_value = [1]
+        #
         row = 2
         element = 0
         #
@@ -152,7 +157,12 @@ class Function4(Frame):
         self.label_name_list = []
         self.label_dob_list = []
         self.label_gpa_list = []
-        for i in db_sql.get_all_sts_inf():
+        if sort:
+            student_inf = sort_value
+        else:
+            student_inf = db_sql.get_all_sts_inf()
+        #
+        for i in student_inf:
             s_id = i[0]
             s_name = i[1]
             s_dob = i[2]
